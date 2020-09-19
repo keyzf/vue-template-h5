@@ -25,8 +25,8 @@ export default {
 				'Vue-router 路由配置',
 				'proxy 跨域配置',
 				'cdn externals 配置',
-				'多环境变量配置',
 				'Webpack 4 vue.config.js 基础配置',
+				'多环境变量配置',
 				'Eslint+Pettier 统一开发规范'
 			]
 		}
