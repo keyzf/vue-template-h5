@@ -1,0 +1,21 @@
+// mixin
+// 清除浮动
+@mixin clearfix {
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+// 多行隐藏
+@mixin textoverflow($clamp: 1) {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $clamp;
+	-webkit-box-orient: vertical;
+	/*! autoprefixer: ignore next */
+}
