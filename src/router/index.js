@@ -23,7 +23,7 @@ const routes = [
 				path: 'mine',
 				name: 'Mine',
 				component: () => import('@/views/Mine'),
-				meta: { title: '关于我', keepAlive: false }
+				meta: { title: '我的', keepAlive: false }
 			}
 		]
 	}
