@@ -1,7 +1,7 @@
 module.exports = {
 	publicPath: '/', //部署应用包时的基本URL
 	outputDir: 'dist', //  生产环境构建文件的目录
-	assetsDir: 'static', //  outputDir的静态资源目录
+	assetsDir: 'static', //  outputDir 的静态资源目录
 	productionSourceMap: false, // 关闭sourceMap 加速生产环境构建
 
 	devServer: {
@@ -12,7 +12,7 @@ module.exports = {
 			warnings: false,
 			errors: true
 		}
-		//配置跨域
+		//配置跨域 注意将 .env.development 文件里的 VUE_APP_BASE_API 设置成 '/'
 		// proxy: {
 		//   '/api': {
 		//       target: "https://test.xxx.com",
