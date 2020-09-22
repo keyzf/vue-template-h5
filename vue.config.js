@@ -31,7 +31,8 @@ module.exports = {
 			scss: {
 				//配置全局sass样式变量
 				prependData: `
-          @import "@/assets/css/mixin.scss";
+					@import "@/assets/css/mixin.scss";
+					@import "@/assets/css/variables.scss";
           `
 			}
 		}
@@ -49,7 +50,7 @@ module.exports = {
 	// },
 
 	chainWebpack: config => {
-		// 移除 prefetch 插件
+		// 移除预读取 prefetch 插件
 		config.plugins.delete('prefetch')
 
 		// 保留元素之间的空格

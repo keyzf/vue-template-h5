@@ -18,13 +18,14 @@ export default {
 	data() {
 		return {
 			list: [
+				'rem 布局及适配',
 				'Sass 全局样式',
 				'VantUI 组件按需加载',
 				'Vuex 状态管理',
 				'Axios 封装及接口管理',
 				'Vue-router 路由配置',
 				'proxy 跨域配置',
-				'cdn externals 配置',
+				'cdn 及 externals 配置',
 				'Webpack 4 vue.config.js 基础配置',
 				'多环境变量配置',
 				'Eslint+Pettier 统一开发规范'

@@ -7,7 +7,7 @@
 			<router-view v-else></router-view>
 		</div>
 		<div class="layout-footer">
-			<van-tabbar fixed route placeholder v-model="active" @change="handleChange">
+			<van-tabbar fixed route v-model="active" @change="handleChange">
 				<van-tabbar-item v-for="(item, index) in tabbars" :to="item.to" :icon="item.icon" :key="index">
 					{{ item.title }}
 				</van-tabbar-item>
