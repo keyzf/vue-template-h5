@@ -46,7 +46,7 @@ Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，
 
 ##### PostCSS 配置
 
-下面提供了一份基本的 `postcss` 配置，可以在此配置的基础上根据项目需求进行修改
+新建 `.postcssrc.js` 文件，可以在以下配置基础上进行修改
 
 ```javascript
 module.exports = {
@@ -64,7 +64,7 @@ module.exports = {
 
 [▲ 回顶部](#top)
 
-### VantUI 组件按需加载 
+### VantUI 组件按需加载
 
 项目采用[Vant 自动按需引入组件 (推荐)](https://youzan.github.io/vant/#/zh-CN/quickstart#fang-shi-yi.-zi-dong-an-xu-yin-ru-zu-jian-tui-jian)下面安装插件介绍：[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 `babel` 插件，它会在编译过程中将`import` 的写法自动转换为按需引入的方式
 
@@ -79,15 +79,15 @@ npm i babel-plugin-import -D
 ```javascript
 // 对于使用 babel7 的用户，可以在 babel.config.js 中配置
 const plugins = [
-  [
-    'import',
-    {
-      libraryName: 'vant',
-      libraryDirectory: 'es',
-      style: true
-    },
-    'vant'
-  ]
+	[
+		'import',
+		{
+			libraryName: 'vant',
+			libraryDirectory: 'es',
+			style: true
+		},
+		'vant'
+	]
 ]
 module.exports = {
 	presets: ['@vue/cli-plugin-babel/preset'],
@@ -131,11 +131,11 @@ vue-template-h5 所有全局样式都在 `@/assets/css` 目录下设置
 
 ```css
 .about-container {
-  /* 你的命名空间 */
-  .van-button {
-    /* vant-ui 元素*/
-    margin-right: 0px;
-  }
+	/* 你的命名空间 */
+	.van-button {
+		/* vant-ui 元素*/
+		margin-right: 0px;
+	}
 }
 ```
 
@@ -155,27 +155,26 @@ vue-template-h5 所有全局样式都在 `@/assets/css` 目录下设置
 
 ```javascript
 module.exports = {
-  css: {
-    extract: IS_PROD,
-    sourceMap: false,
-    loaderOptions: {
-      // 给 scss-loader 传递选项
-      scss: {
-        // 注入 `sass` 的 `mixin` `variables` 到全局
-        prependData: `
+	css: {
+		extract: IS_PROD,
+		sourceMap: false,
+		loaderOptions: {
+			// 给 scss-loader 传递选项
+			scss: {
+				// 注入 `sass` 的 `mixin` `variables` 到全局
+				prependData: `
                 @import "assets/css/mixin.scss";
                 @import "assets/css/variables.scss";
                  `
-      }
-    }
-  }
+			}
+		}
+	}
 }
 ```
 
 ```javascript
 // 引入全局样式
 import '@/assets/css/index.scss'
-
 ```
 
 [▲ 回顶部](#top)
@@ -198,10 +197,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 new Vue({
-  el: '#app',
-  router,
-  store,
-  render: h => h(App)
+	el: '#app',
+	router,
+	store,
+	render: h => h(App)
 })
 ```
 
@@ -209,16 +208,16 @@ new Vue({
 
 ```html
 <script>
-  import { mapGetters,mapActions } from 'vuex'
-  export default {
-    computed: {
-      ...mapGetters(['userName'])
-    },
+	import { mapGetters, mapActions } from 'vuex'
+	export default {
+		computed: {
+			...mapGetters(['userName'])
+		},
 
-    methods: {
-      ...mapActions(['setUserName'])
-    }
-  }
+		methods: {
+			...mapActions(['setUserName'])
+		}
+	}
 </script>
 ```
 
@@ -269,7 +268,7 @@ export default router
 
 [▲ 回顶部](#top)
 
-###  Axios 封装及接口管理
+### Axios 封装及接口管理
 
 `utils/request.js` 封装 axios ,开发者需要根据后台接口做修改。
 
@@ -343,7 +342,7 @@ export default service
 - 你可以建立多个模块对接接口, 比如 `user.js`
 - `url` 接口地址，请求的时候会拼接上 `config` 下的 `baseApi`
 - `method` 请求方法
-- `data` 请求参数 
+- `data` 请求参数
 - `hideloading` 默认 `false`,设置为 `true` 后，不显示 `loading`
 
 ```javascript
@@ -377,8 +376,8 @@ import { getUserInfo } from '@/api'
 
 const params = { user: 'zhangfei' }
 getUserInfo(params)
-  .then(() => {})
-  .catch(() => {})
+	.then(() => {})
+	.catch(() => {})
 ```
 
 [▲ 回顶部](#top)
@@ -391,26 +390,26 @@ getUserInfo(params)
 
 ```javascript
 module.exports = {
-  devServer: {
-    // ....
-    proxy: {
-      //配置跨域
-      '/api': {
-        target: 'https://test.xxx.com', // 接口的域名
-        // ws: true, // 是否启用websockets
-        changOrigin: true, // 开启代理，在本地创建一个虚拟服务端
-        pathRewrite: {
-          '^/api': '/'
-        }
-      }
-    }
-  }
+	devServer: {
+		// ....
+		proxy: {
+			//配置跨域
+			'/api': {
+				target: 'https://test.xxx.com', // 接口的域名
+				// ws: true, // 是否启用websockets
+				changOrigin: true, // 开启代理，在本地创建一个虚拟服务端
+				pathRewrite: {
+					'^/api': '/'
+				}
+			}
+		}
+	}
 }
 ```
 
 [▲ 回顶部](#top)
 
-### 配置 externals 引入 cdn 资源 
+### 配置 externals 引入 cdn 资源
 
 ```javascript
 module.exports = {
@@ -477,4 +476,4 @@ module.exports = {
 
 [▲ 回顶部](#top)
 
-##### 如对你有所帮助，记得点个小星星 ★          一起加油，成为最靓的仔~~~
+##### 如对你有所帮助，记得点个小星星 ★ 一起加油，成为最靓的仔~~~
