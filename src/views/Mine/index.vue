@@ -9,7 +9,7 @@
 					<a target="_blank" href="https://github.com/zhangfeiv/vue-template-h5">
 						https://github.com/zhangfeiv/vue-template-h5
 					</a>
-					<div class="tip">（英俊帅气的你已经准备点star★了）</div>
+					<div class="tip">（聪明帅气的你赶紧点个star★吧）</div>
 				</div>
 				<div class="item">项目作者: {{ userName }}</div>
 			</div>
@@ -61,7 +61,7 @@ export default {
 			}
 			.item {
 				font-size: 14px;
-				line-height: 24px;
+				line-height: 26px;
 				margin: 5px 0;
 				a {
 					text-decoration: underline;
